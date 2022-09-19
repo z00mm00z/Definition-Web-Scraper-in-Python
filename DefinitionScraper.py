@@ -4,7 +4,7 @@ import csv
 
 exceptions = []
 
-file = open('WORD_DATE_LEN_5.csv')
+file = open('WORD_DATA_LEN_5.csv')
 type(file)
 
 csvreader = csv.reader(file, delimiter=',')
