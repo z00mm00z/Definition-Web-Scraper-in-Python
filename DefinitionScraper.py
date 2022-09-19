@@ -4,7 +4,7 @@ import csv
 
 exceptions = []
 
-file = open('MOCK_DATA.csv')
+file = open('WORD_DATE_LEN_5.csv')
 type(file)
 
 csvreader = csv.reader(file, delimiter=',')
