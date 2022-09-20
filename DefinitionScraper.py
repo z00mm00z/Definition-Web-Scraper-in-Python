@@ -3,11 +3,14 @@ import requests
 import csv
 
 exceptions = []
+exceptionNo = 0
 
-file = open('WORD_DATA_LEN_5.csv')
-type(file)
+dataFile = open('WORD_DATA_LEN_5.csv', 'r')
+outputWordFile = open('WORD_OUTPUT.csv', 'w')
+type(dataFile)
 
-csvreader = csv.reader(file, delimiter=',')
+csvreader = csv.reader(dataFile, delimiter=',')
+csvwriterWords = csv.writer(outputWordFile, delimiter=' ')
 
 print("If Google's HTML code is changed, this script may need to be updated.")
 print("Definitions are scraped from Google, Dictionary.com and Merriam Webster.")
@@ -26,6 +29,8 @@ for row in csvreader:
         print(query)
         print('Source: https://google.com')
         print(definition)
+
+        csvwriterWords.writerow(query) #FIX THIS, WRITING WITH SPACES INBETWEEN
     except AttributeError: 
         try:
             url = f'https://dictionary.com/browse/{query}'
@@ -48,11 +53,17 @@ for row in csvreader:
                 print('Source: https://merriam-webster.com')
                 print(definition)
             except AttributeError:
-                print('EXCEPTION: definition for "' + str(query) + '" could not be found.')
+                print('FAILED: definition for "' + str(query) + '" could not be found.')
+                exceptionNo += 1
                 exceptions.append(query)
-    
+
+
+
 for i in exceptions:
     print(exceptions[i])
+
+dataFile.close()
+outputWordFile.close()
     
     
 
