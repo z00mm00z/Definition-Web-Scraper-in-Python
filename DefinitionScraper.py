@@ -65,16 +65,18 @@ for i in range(len(words)):
 if exceptionsCount != 0:
     print('---------')
     print(str(exceptionsCount) + ' definition(s) could not be found.')
-    answer = input('Add now? (y/n): ', )
-    if answer == 'y':
-        for exception in exceptions:
-            print(exception)
-            input = input('Definition: ',)
-            csvwriter.writerow([exception, input])
+    for exception in exceptions:
+        print(exception)
+        answer = input('Add now? (y/n): ', )
+        if answer == 'y':
+            defIn = input('Definition: ', )
+            csvwriter.writerow([exception, defIn])
             
 
 dataFile.close()
 outputWordFile.close()
+
+print(f'Done. {len(definitions)} definition(s) were found. {exceptionsCount} execption(s) were/was handled.')
     
     
 
