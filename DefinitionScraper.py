@@ -76,7 +76,7 @@ if exceptionsCount != 0:
 dataFile.close()
 outputWordFile.close()
 
-print(f'Done. {len(definitions)} definition(s) were found. {exceptionsCount} execption(s) were/was handled.')
+print(f'Done. {len(definitions)} definition(s) found. {exceptionsCount} execption(s) handled.')
     
     
 
