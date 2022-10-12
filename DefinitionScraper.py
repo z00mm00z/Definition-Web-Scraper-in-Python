@@ -7,7 +7,9 @@ words = []
 definitions = []
 exceptionsCount = 0
 
-dataFile = open('WORD_DATA_LEN_5.csv', 'r')
+userInput = input('File to use: ', )
+
+dataFile = open(userInput, 'r')
 outputWordFile = open('OUTPUT_DATA.csv', 'w')
 type(dataFile)
 
