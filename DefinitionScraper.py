@@ -9,7 +9,7 @@ definitions = []
 exceptionsCount = 0
 
 #GET FILE TO READ
-userInput = input('File to use, e.g. WORD_DATA_LEN_5.csv: ', )
+userInput = input('File to use, (e.g. INPUT_DATA.csv): ', )
 
 #OPEN FILES
 dataFile = open(userInput, 'r')
