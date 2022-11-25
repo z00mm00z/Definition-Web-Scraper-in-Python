@@ -5,5 +5,5 @@
 #### Sources: 
 - Google 
 - Dictionary.com 
-- Merriam Webster. 
+- Merriam Webster
  
